@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ejercicio2
+namespace Empleados
 {
     public class Reponedor : Persona
     {
-        public int numCredencial { get; set; }
+        public string numCredencial { get; set; }
 
         public override void marcarSalida()
         {
