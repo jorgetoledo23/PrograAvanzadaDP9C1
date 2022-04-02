@@ -9,6 +9,15 @@
  * */
 using Empleados;
 
+/* Nullabilidad 
+string name = null;
+int? i = null;
+
+int a = i ?? 20;
+*/
+
+
+
 string? opcion;
 List<Persona> listaPersonal = new List<Persona>();
 

@@ -4,12 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{55AFF2AB-FEB9-4727-A279-91F76FD158BA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E204E00C-9E16-4982-B0A3-4469338CCC5D} = {E204E00C-9E16-4982-B0A3-4469338CCC5D}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio1", "Ejercicio1\Ejercicio1.csproj", "{5029A306-0EB7-453B-A695-1B5761F5A26D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio2", "Ejercicio2\Ejercicio2.csproj", "{555E23E6-B38D-4B2C-BF13-98B5DF5A213A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empleados", "Empleados\Empleados.csproj", "{3C38CF86-207D-4EFB-967F-38DDBDD9B8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empleados", "Empleados\Empleados.csproj", "{3C38CF86-207D-4EFB-967F-38DDBDD9B8A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesktopApp", "DesktopApp\DesktopApp.csproj", "{E204E00C-9E16-4982-B0A3-4469338CCC5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{3C38CF86-207D-4EFB-967F-38DDBDD9B8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C38CF86-207D-4EFB-967F-38DDBDD9B8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C38CF86-207D-4EFB-967F-38DDBDD9B8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E204E00C-9E16-4982-B0A3-4469338CCC5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E204E00C-9E16-4982-B0A3-4469338CCC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E204E00C-9E16-4982-B0A3-4469338CCC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E204E00C-9E16-4982-B0A3-4469338CCC5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
