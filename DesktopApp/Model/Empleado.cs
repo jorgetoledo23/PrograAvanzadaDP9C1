@@ -5,8 +5,8 @@ namespace DesktopApp.Model
 {
     public class Empleado
     {
-        [Key]
-        public int IdEmpleado { get; set; }
+        //[Key]
+        public int EmpleadoId { get; set; }
 
         [Required]
         [StringLength(12)]
@@ -19,15 +19,15 @@ namespace DesktopApp.Model
         public string Apellidos { get; set; }
         
         [Required]
-        public string TipoEmpleado { get; set; }
-
-        [Required]
         public string CodigoEmpleado { get; set; }
 
         public string Telefono { get; set; }
+
         public string Correo { get; set; }
 
         public DateTime FechaIngreso { get; set; }
+
+        public TipoEmpleado TipoEmpleado { get; set; }
 
     }
 }

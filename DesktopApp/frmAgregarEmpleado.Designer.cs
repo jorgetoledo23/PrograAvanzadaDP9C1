@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.rbContratista = new System.Windows.Forms.RadioButton();
+            this.rbReponedor = new System.Windows.Forms.RadioButton();
+            this.rbVendedor = new System.Windows.Forms.RadioButton();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtCorreo);
+            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.rbContratista);
+            this.groupBox1.Controls.Add(this.rbReponedor);
+            this.groupBox1.Controls.Add(this.rbVendedor);
+            this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtNombres);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtRut);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -74,21 +74,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Empleado";
             // 
-            // textBox6
+            // txtCorreo
             // 
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(561, 156);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(282, 30);
-            this.textBox6.TabIndex = 17;
+            this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreo.Location = new System.Drawing.Point(561, 156);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(282, 30);
+            this.txtCorreo.TabIndex = 17;
             // 
-            // textBox5
+            // txtTelefono
             // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(561, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(282, 30);
-            this.textBox5.TabIndex = 16;
+            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTelefono.Location = new System.Drawing.Point(561, 105);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(282, 30);
+            this.txtTelefono.TabIndex = 16;
             // 
             // label6
             // 
@@ -111,23 +111,24 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Telefono";
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(197, 322);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(394, 51);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Agregar Empleado";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregar.Location = new System.Drawing.Point(197, 322);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(394, 51);
+            this.btnAgregar.TabIndex = 12;
+            this.btnAgregar.Text = "Agregar Empleado";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // textBox4
+            // txtCodigo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(123, 271);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(282, 30);
-            this.textBox4.TabIndex = 11;
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCodigo.Location = new System.Drawing.Point(123, 271);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(282, 30);
+            this.txtCodigo.TabIndex = 11;
             // 
             // label4
             // 
@@ -139,49 +140,54 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Codigo";
             // 
-            // radioButton3
+            // rbContratista
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.Location = new System.Drawing.Point(276, 207);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(115, 27);
-            this.radioButton3.TabIndex = 9;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Contratista";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbContratista.AutoSize = true;
+            this.rbContratista.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbContratista.Location = new System.Drawing.Point(276, 207);
+            this.rbContratista.Name = "rbContratista";
+            this.rbContratista.Size = new System.Drawing.Size(115, 27);
+            this.rbContratista.TabIndex = 9;
+            this.rbContratista.TabStop = true;
+            this.rbContratista.Text = "Contratista";
+            this.rbContratista.UseVisualStyleBackColor = true;
+            this.rbContratista.Click += new System.EventHandler(this.rbVendedor_CheckedChanged);
             // 
-            // radioButton2
+            // rbReponedor
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(140, 207);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(115, 27);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Reponedor";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbReponedor.AutoSize = true;
+            this.rbReponedor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbReponedor.Location = new System.Drawing.Point(140, 207);
+            this.rbReponedor.Name = "rbReponedor";
+            this.rbReponedor.Size = new System.Drawing.Size(115, 27);
+            this.rbReponedor.TabIndex = 8;
+            this.rbReponedor.TabStop = true;
+            this.rbReponedor.Text = "Reponedor";
+            this.rbReponedor.UseVisualStyleBackColor = true;
+            this.rbReponedor.Click += new System.EventHandler(this.rbVendedor_CheckedChanged);
             // 
-            // radioButton1
+            // rbVendedor
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.Location = new System.Drawing.Point(16, 207);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(105, 27);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Vendedor";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbVendedor.AutoSize = true;
+            this.rbVendedor.Checked = true;
+            this.rbVendedor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbVendedor.Location = new System.Drawing.Point(16, 207);
+            this.rbVendedor.Name = "rbVendedor";
+            this.rbVendedor.Size = new System.Drawing.Size(105, 27);
+            this.rbVendedor.TabIndex = 7;
+            this.rbVendedor.TabStop = true;
+            this.rbVendedor.Text = "Vendedor";
+            this.rbVendedor.UseVisualStyleBackColor = true;
+            this.rbVendedor.CheckedChanged += new System.EventHandler(this.rbVendedor_CheckedChanged_1);
+            this.rbVendedor.Click += new System.EventHandler(this.rbVendedor_CheckedChanged);
             // 
-            // textBox3
+            // txtApellidos
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(123, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(282, 30);
-            this.textBox3.TabIndex = 6;
+            this.txtApellidos.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtApellidos.Location = new System.Drawing.Point(123, 153);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(282, 30);
+            this.txtApellidos.TabIndex = 6;
             // 
             // label3
             // 
@@ -193,13 +199,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Apellidos";
             // 
-            // textBox2
+            // txtNombres
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(123, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 30);
-            this.textBox2.TabIndex = 4;
+            this.txtNombres.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombres.Location = new System.Drawing.Point(123, 102);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(282, 30);
+            this.txtNombres.TabIndex = 4;
             // 
             // label2
             // 
@@ -211,13 +217,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombres";
             // 
-            // textBox1
+            // txtRut
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(123, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 30);
-            this.textBox1.TabIndex = 2;
+            this.txtRut.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRut.Location = new System.Drawing.Point(123, 51);
+            this.txtRut.Name = "txtRut";
+            this.txtRut.Size = new System.Drawing.Size(212, 30);
+            this.txtRut.TabIndex = 2;
             // 
             // label1
             // 
@@ -252,20 +258,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton rbContratista;
+        private System.Windows.Forms.RadioButton rbReponedor;
+        private System.Windows.Forms.RadioButton rbVendedor;
+        private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRut;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
     }
