@@ -13,6 +13,7 @@ namespace DesktopApp
 {
     public partial class frmListarEmpleados : Form
     {
+        private int EmpleadoId;
         public frmListarEmpleados()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace DesktopApp
                 LlenarLista(empleados);
             }
         }
+
 
         private void LimpiarLista() => listviewEmpleados.Items.Clear();
 
@@ -86,6 +88,32 @@ namespace DesktopApp
                     LimpiarLista();
                     LlenarLista(empleados);
                 
+            }
+        }
+
+        private void listviewEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnEdit.Enabled = true;
+            ListViewItem listViewItem = null;
+            if (listviewEmpleados.SelectedItems.Count > 0)
+            {
+                listViewItem = listviewEmpleados.SelectedItems[0];
+
+                EmpleadoId = Convert.ToInt32(listViewItem.Text);
+                //MessageBox.Show(EmpleadoId);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmEditEmpleado frmEdit = new frmEditEmpleado(EmpleadoId);
+            frmEdit.ShowDialog();
+            LimpiarLista();
+            using (var context = new AppDbContext())
+            {
+                //SELECT * FROM tabla
+                var empleados = context.Empleados.ToList();
+                LlenarLista(empleados);
             }
         }
     }
