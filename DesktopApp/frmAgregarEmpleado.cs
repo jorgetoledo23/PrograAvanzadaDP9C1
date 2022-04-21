@@ -31,12 +31,28 @@ namespace DesktopApp
                     Telefono = txtTelefono.Text,
                     Correo = txtCorreo.Text,
                     CodigoEmpleado = txtCodigo.Text,
-                    TipoEmpleado = tipoEmpleado
+                    TipoEmpleado = tipoEmpleado,
+                    FechaIngreso = dtFechaIngreso.Value
                 };
+                //INSERT ENTITY FRAMEWORK
                 context.Add(E);
                 context.SaveChanges();
             }
+            if(MessageBox.Show("Empleado Agregado Exitosamente!, ¿Quires seguir agregando Empleados?",
+                "Mensaje",MessageBoxButtons.YesNo,MessageBoxIcon.Information) == DialogResult.Yes) LimpiarCajas();
+            else this.Close();
+            
+            
+        }
 
+        private void LimpiarCajas()
+        {
+            txtRut.Text = String.Empty;
+            txtNombres.Text = String.Empty;
+            txtApellidos.Text = String.Empty;
+            txtTelefono.Text = String.Empty;
+            txtCorreo.Text = String.Empty;
+            txtCodigo.Text = String.Empty;
         }
 
         private void rbVendedor_CheckedChanged(object sender, EventArgs e)

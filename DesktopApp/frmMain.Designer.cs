@@ -91,6 +91,7 @@ namespace DesktopApp
             this.listarBuscarEmpleadosToolStripMenuItem.Name = "listarBuscarEmpleadosToolStripMenuItem";
             this.listarBuscarEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.listarBuscarEmpleadosToolStripMenuItem.Text = "Listar/Buscar Empleados";
+            this.listarBuscarEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.listarBuscarEmpleadosToolStripMenuItem_Click);
             // 
             // frmMain
             // 

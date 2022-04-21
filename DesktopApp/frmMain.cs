@@ -27,5 +27,10 @@ namespace DesktopApp
 
         }
 
+        private void listarBuscarEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListarEmpleados frmListar = new frmListarEmpleados();
+            frmListar.ShowDialog();
+        }
     }
 }

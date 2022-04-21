@@ -45,11 +45,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtFechaIngreso = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.dtFechaIngreso);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label6);
@@ -77,7 +81,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCorreo.Location = new System.Drawing.Point(561, 156);
+            this.txtCorreo.Location = new System.Drawing.Point(561, 152);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(282, 30);
             this.txtCorreo.TabIndex = 17;
@@ -94,7 +98,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(469, 159);
+            this.label6.Location = new System.Drawing.Point(481, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 23);
             this.label6.TabIndex = 15;
@@ -105,7 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(455, 108);
+            this.label5.Location = new System.Drawing.Point(469, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 23);
             this.label5.TabIndex = 13;
@@ -211,7 +215,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(16, 105);
+            this.label2.Location = new System.Drawing.Point(14, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 3;
@@ -229,11 +233,31 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(70, 54);
+            this.label1.Location = new System.Drawing.Point(58, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Rut";
+            // 
+            // dtFechaIngreso
+            // 
+            this.dtFechaIngreso.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaIngreso.Location = new System.Drawing.Point(561, 199);
+            this.dtFechaIngreso.Name = "dtFechaIngreso";
+            this.dtFechaIngreso.Size = new System.Drawing.Size(282, 34);
+            this.dtFechaIngreso.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(427, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 23);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Fecha Ingreso";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmAgregarEmpleado
             // 
@@ -274,5 +298,7 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtFechaIngreso;
     }
 }
