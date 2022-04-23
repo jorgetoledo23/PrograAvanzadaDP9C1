@@ -1,4 +1,5 @@
 ﻿using DesktopApp.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +18,39 @@ namespace DesktopApp
         public frmListarEmpleados()
         {
             InitializeComponent();
-
             LimpiarLista();
 
+            Task.Run(async () =>
+            {
+
+                await LlenarListaAsync();
+
+            });
+        }
+
+        private async Task<bool> LlenarListaAsync()
+        {
             using (var context = new AppDbContext())
             {
-                //SELECT * FROM tabla
-                var empleados = context.Empleados.ToList();
-                LlenarLista(empleados);
+                var empleados = context.Empleados.Include(x => x.Departamento).ToList();
+                foreach (var E in empleados)
+                {
+                    ListViewItem lvitem = new ListViewItem();
+                    lvitem.Text = E.EmpleadoId.ToString();
+                    lvitem.SubItems.Add(E.Rut);
+                    lvitem.SubItems.Add(E.Name);
+                    lvitem.SubItems.Add(E.Apellidos);
+                    lvitem.SubItems.Add(E.Correo);
+                    lvitem.SubItems.Add(E.Telefono);
+                    lvitem.SubItems.Add(E.TipoEmpleado.ToString());
+                    lvitem.SubItems.Add(E.FechaIngreso.ToString("d"));
+                    lvitem.SubItems.Add(E.CodigoEmpleado.ToString());
+                    lvitem.SubItems.Add(E.Departamento.Descripcion.ToString());
+                    listviewEmpleados.Items.Add(lvitem);
+                }
             }
+            return true;
+            
         }
 
 
@@ -45,6 +70,7 @@ namespace DesktopApp
                 lvitem.SubItems.Add(E.TipoEmpleado.ToString());
                 lvitem.SubItems.Add(E.FechaIngreso.ToString("d"));
                 lvitem.SubItems.Add(E.CodigoEmpleado.ToString());
+                lvitem.SubItems.Add(E.DepartamentoId.ToString());
                 listviewEmpleados.Items.Add(lvitem);
             }
         }
@@ -94,6 +120,8 @@ namespace DesktopApp
         private void listviewEmpleados_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnEdit.Enabled = true;
+            btnEliminar.Enabled = true;
+
             ListViewItem listViewItem = null;
             if (listviewEmpleados.SelectedItems.Count > 0)
             {
@@ -113,8 +141,32 @@ namespace DesktopApp
             {
                 //SELECT * FROM tabla
                 var empleados = context.Empleados.ToList();
+                //var allempleados = context.Empleados.IgnoreQueryFilters().ToList();
                 LlenarLista(empleados);
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Estas seguro de Eliminar el Empleado?","Info",MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                //Eliminar Empleado
+                using (var context = new AppDbContext())
+                {
+                    var emp = context.Empleados.Where(emp => emp.EmpleadoId == EmpleadoId).First();
+                    //context.Remove(emp); Eliminar
+                    emp.Activo = false;
+                    context.Update(emp);
+                    context.SaveChanges();
+                    listviewEmpleados.Items.Clear();
+                    LlenarLista(context.Empleados.ToList());
+                }
+            }
+        }
+
+        private void frmListarEmpleados_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

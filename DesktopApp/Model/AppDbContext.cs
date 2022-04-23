@@ -19,10 +19,19 @@ namespace DesktopApp.Model
             modelBuilder.Entity<Empleado>().Property(prop => prop.FechaIngreso)
                 .HasColumnType("date");
 
+            modelBuilder.Entity<Empleado>().Property(prop => prop.Activo)
+                .HasDefaultValue(true);
+
+            //Filtro a nivel del Modelo
+            modelBuilder.Entity<Empleado>()
+                .HasQueryFilter(prop => prop.Activo == true);
+
         }
 
 
         public DbSet<Empleado> Empleados { get; set; }
+
+        public DbSet<Departamento> Departamentos { get; set; }
 
     }
 }

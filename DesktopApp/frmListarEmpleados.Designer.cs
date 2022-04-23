@@ -44,6 +44,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,8 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8,
-            this.columnHeader9});
+            this.columnHeader9,
+            this.columnHeader10});
             this.listviewEmpleados.FullRowSelect = true;
             this.listviewEmpleados.GridLines = true;
             this.listviewEmpleados.HideSelection = false;
@@ -159,25 +162,48 @@
             // btnEdit
             // 
             this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(921, 487);
+            this.btnEdit.Location = new System.Drawing.Point(921, 95);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(197, 41);
+            this.btnEdit.Size = new System.Drawing.Size(197, 52);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.ForeColor = System.Drawing.Color.Red;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminar.IconColor = System.Drawing.Color.Red;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 32;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(762, 95);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(153, 52);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Departamento";
+            // 
             // frmListarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 576);
+            this.ClientSize = new System.Drawing.Size(1136, 489);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmListarEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listar Empleados";
+            this.Load += new System.EventHandler(this.frmListarEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -202,5 +228,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnEdit;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }

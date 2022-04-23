@@ -32,7 +32,8 @@ namespace DesktopApp
                     Correo = txtCorreo.Text,
                     CodigoEmpleado = txtCodigo.Text,
                     TipoEmpleado = tipoEmpleado,
-                    FechaIngreso = dtFechaIngreso.Value
+                    FechaIngreso = dtFechaIngreso.Value,
+                    DepartamentoId = 1
                 };
                 //INSERT ENTITY FRAMEWORK
                 context.Add(E);

@@ -12,6 +12,7 @@ namespace DesktopApp
 {
     public partial class frmMain : Form
     {
+        frmListarEmpleados frmListar = new frmListarEmpleados();
         public frmMain()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace DesktopApp
 
         private void listarBuscarEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListarEmpleados frmListar = new frmListarEmpleados();
+            
             frmListar.ShowDialog();
         }
     }

@@ -4,40 +4,22 @@ using DesktopApp.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DesktopApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220423135151_EmpleadosActive")]
+    partial class EmpleadosActive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
-
-            modelBuilder.Entity("DesktopApp.Model.Departamento", b =>
-                {
-                    b.Property<int>("DepartamentoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("CompanyNo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("DepartamentoId");
-
-                    b.ToTable("Departamentos");
-                });
 
             modelBuilder.Entity("DesktopApp.Model.Empleado", b =>
                 {
@@ -63,9 +45,6 @@ namespace DesktopApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DepartamentoId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("FechaIngreso")
                         .HasColumnType("date");
 
@@ -87,25 +66,7 @@ namespace DesktopApp.Migrations
 
                     b.HasKey("EmpleadoId");
 
-                    b.HasIndex("DepartamentoId");
-
                     b.ToTable("Empleados");
-                });
-
-            modelBuilder.Entity("DesktopApp.Model.Empleado", b =>
-                {
-                    b.HasOne("DesktopApp.Model.Departamento", "Departamento")
-                        .WithMany("Empleados")
-                        .HasForeignKey("DepartamentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Departamento");
-                });
-
-            modelBuilder.Entity("DesktopApp.Model.Departamento", b =>
-                {
-                    b.Navigation("Empleados");
                 });
 #pragma warning restore 612, 618
         }

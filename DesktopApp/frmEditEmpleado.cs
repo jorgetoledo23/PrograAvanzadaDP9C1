@@ -63,6 +63,7 @@ namespace DesktopApp
             Emp.Telefono = txtTelefono.Text;
             Emp.TipoEmpleado = tipoEmpleado;
             Emp.Correo = txtCorreo.Text;
+            Emp.DepartamentoId = 2;
 
             using (var context = new AppDbContext())
             {

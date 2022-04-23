@@ -29,5 +29,12 @@ namespace DesktopApp.Model
 
         public TipoEmpleado TipoEmpleado { get; set; }
 
+        public bool Activo { get; set; }
+
+        public int DepartamentoId { get; set; }
+        
+        //Prop de Navegacion
+        public Departamento Departamento { get; set; }
+
     }
 }
