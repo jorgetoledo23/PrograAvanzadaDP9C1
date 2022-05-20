@@ -1,11 +1,14 @@
 ﻿using APIEmpleados.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APIEmpleados.Controllers
 {
+    [Authorize(Roles = "Free")]
     [Route("api/[controller]")]
     [ApiController]
+    
     public class DepartamentoController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -17,6 +20,7 @@ namespace APIEmpleados.Controllers
 
         [HttpGet]
         [Route("GetAllDepartments")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Departamento>>> GetAllDepartments()
         {
             var Departments = _context.Departamentos.ToList();
@@ -34,6 +38,7 @@ namespace APIEmpleados.Controllers
 
         [HttpPost]
         [Route("AddDepartment")]
+        [Authorize(Roles = "Free")]
         public async Task<ActionResult> AddDeparment(DepartamentoDTO deptDTO)
         {
             if (deptDTO == null) return BadRequest();

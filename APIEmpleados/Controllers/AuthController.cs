@@ -1,6 +1,9 @@
 ﻿using APIEmpleados.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 
 namespace APIEmpleados.Controllers
@@ -10,10 +13,12 @@ namespace APIEmpleados.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _config;
 
-        public AuthController(AppDbContext context)
+        public AuthController(AppDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
         [HttpPost]
@@ -46,22 +51,17 @@ namespace APIEmpleados.Controllers
 
             var user = _context.Usuarios.FirstOrDefault(u => u.Username == loginDTO.Username);
 
-            if (user == null) return BadRequest();
+            if (user == null) return BadRequest("Usuario NO Encontrado");
 
             if (VerifyPasswordHash(loginDTO.Password, user.PasswordHash, user.PasswordSalt)){
-                return Ok();
+                string tk = CreateToken(user);
+                return Ok(tk);
             }
             else
             {
-                return BadRequest();
+                return BadRequest("Credenciales Incorrectas");
             }
         }
-
-
-
-
-
-
 
         private void CreatePasswordHash(string password, 
             out byte[] passwordHash, 
@@ -86,6 +86,30 @@ namespace APIEmpleados.Controllers
                     .GetBytes(password));
                 return computedHash.SequenceEqual(passwordHash);
             }
+        }
+
+
+        private string CreateToken(Usuario user)
+        {
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Role, "Free")
+            };
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
+                _config.GetSection("AppSettings:Token").Value));
+            var credential = new SigningCredentials(key, 
+                SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.UtcNow.AddDays(1),
+                signingCredentials: credential
+                );
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwt;
         }
 
 
