@@ -31,8 +31,9 @@ namespace APIEmpleados.Model
 
         public bool Activo { get; set; }
 
+
+        //FK
         public int DepartamentoId { get; set; }
-        
         //Prop de Navegacion
         public Departamento Departamento { get; set; }
 

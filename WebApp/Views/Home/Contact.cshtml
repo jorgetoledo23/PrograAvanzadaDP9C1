@@ -1,0 +1,13 @@
+﻿@model ContactViewModel
+
+
+<h1>Contacto</h1>
+<h3>Bienvenido al Sistema</h3>
+
+<ul>
+    @foreach(var item in Model.Contactos)
+    {
+    <li>@item  <a><i class="fa-solid fa-trash"></i></a></li>
+    }
+</ul>
+
