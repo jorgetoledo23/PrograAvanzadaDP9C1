@@ -11,8 +11,13 @@ builder.Services.AddDbContext<AppDbContext>();
 
 //Login
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie("Cookies");
-
+    .AddCookie("Cookies", options =>
+    {
+        options.LoginPath = "/Auth/LoginIn";
+        options.LogoutPath = "/Auth/Logout";
+        options.AccessDeniedPath = "/Auth/AccessDenied";
+        options.ReturnUrlParameter = "ReturnUrl";
+    }); 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -37,8 +42,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+//El orden IMPORTA!!!!
 app.UseAuthentication();
+app.UseAuthorization();
+
+
 app.UseSession();
 
 app.MapControllerRoute(
