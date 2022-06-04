@@ -1,4 +1,6 @@
-﻿namespace WebApp.Models
+﻿using WebApp.Models;
+
+namespace WebApp.ViewModel
 {
     public class ProfileViewModel
     {
