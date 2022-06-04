@@ -76,7 +76,7 @@ namespace WebApp.Controllers
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                             principal,
                             new AuthenticationProperties { IsPersistent = true });
-                    return RedirectToAction(nameof(Profile));
+                    return RedirectToAction(nameof(Index), "Home");
                 }
             }
         }

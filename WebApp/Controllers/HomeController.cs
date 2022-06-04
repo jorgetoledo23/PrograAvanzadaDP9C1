@@ -6,7 +6,7 @@ using WebApp.ViewModel;
 
 namespace WebApp.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "Administrador, Control")]
     public class HomeController : Controller
     {
         //[Authorize(Roles = "Administrador")]
