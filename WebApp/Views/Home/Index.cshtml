@@ -1,5 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Inicio";
+    bool esAdmin = false;
+    foreach (var c in User.Claims)
+    {
+        if (c.Value == "Administrador") esAdmin = true;
+    }
 }
 
 <div class="text-center">
@@ -63,11 +68,24 @@
                 <div class="card-body">
                     <h5 class="card-title">Administracion de Usuarios</h5>
                     <p class="card-text">Crea, edita o elimina nuevos Usuarios del Sistema</p>
-                    <a asp-controller="Usuarios" asp-action="GestionUsuarios"
+
+                    @if (esAdmin)
+                    {
+                        <a asp-controller="Usuarios" asp-action="GestionUsuarios"
                        class="btn btn-outline-warning col-12">Ir a la Administracion</a>
+                    }
+                    else
+                    {
+
+                        <a asp-controller="Usuarios" asp-action="GestionUsuarios"
+                       class="btn btn-outline-warning col-12 disabled">Sin Acceso a Esta Funcion</a>
+                    }
+
                 </div>
             </div>
         </div>
+
+
 
         <div class="col-lg-4">
             <div class="card p-3">
@@ -80,6 +98,8 @@
                 </div>
             </div>
         </div>
+
+
 
     </div>
 </div>

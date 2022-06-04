@@ -50,6 +50,48 @@ namespace WebApp.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> EditarUsuario(Guid userid)
+        {
+            var U = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(userid));
+            if (U == null) return NotFound();
+
+            EditarUserViewModel Evm = new EditarUserViewModel()
+            {
+                Email = U.Email,
+                Username = U.Username,
+                Id = userid,
+                Name = U.Name,
+                Rol = U.Rol
+            };
+
+            return View(Evm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditarUsuario(EditarUserViewModel Evm)
+        {
+            var U = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(Evm.Id));
+            if (U == null) return NotFound();
+
+            U.Name = Evm.Name;
+            U.Email = Evm.Email;
+            U.Username = Evm.Username;
+            U.Rol = Evm.Rol;
+            CreatePasswordHash(Evm.Password, out byte[] passwordHash, out byte[] passwordSalt);
+
+            U.PasswordSalt = passwordSalt;
+            U.PasswordHash = passwordHash;
+
+            _context.Update(U);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(GestionUsuarios));
+        }
+
+
+
+
 
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
