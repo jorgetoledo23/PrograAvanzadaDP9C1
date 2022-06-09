@@ -1,0 +1,44 @@
+﻿@model ICollection<Categoria>
+
+<div class="card text-center">
+    <div class="card-header">
+        Administracion de Categorias
+    </div>
+    <div class="card-body">
+        <a asp-action="Create"
+        class="btn btn-outline-primary"><i class="fa-solid fa-user-plus me-2"></i>Agregar Nueva Categoria</a>
+    </div>
+</div>
+
+<div class=" row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Enabled</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var C in Model)
+            {
+                <tr>
+                    <td>@C.Name</td>
+                    <td>@C.Descripcion</td>
+                    <td>@C.Enabled</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-CategoriaId="@C.Id"><i class="fa-solid fa-pen-to-square me-2"></i></a>
+                        @if (C.Enabled == true)
+                        {
+                            <a asp-action="Disable" asp-route-CategoriaId="@C.Id" asp-route-Enable="false"><i class="fa-solid fa-toggle-off"></i></a>
+                        }else{
+                            <a asp-action="Disable" asp-route-CategoriaId="@C.Id" asp-route-Enable="true"><i class="fa-solid fa-toggle-on"></i></a>
+                        }
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -14,9 +14,9 @@
             <div class="card p-3">
                 <i class="fa-solid fa-copyright" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Marcas</h5>
-                    <p class="card-text">Crea, Edita o Elimina Marcas en el Sistema para la administracion y gestion de Equipos Tecnologicos!</p>
-                    <a asp-controller="Marcas" asp-action="Index"
+                    <h5 class="card-title">Administracion de Categorias</h5>
+                    <p class="card-text">Crea, Edita o Elimina Categorias en el Sistema para la administracion y gestion de Equipos Tecnologicos!</p>
+                    <a asp-controller="Categorias" asp-action="Index"
                        class="btn btn-outline-danger col-12">Ir a la Administracion</a>
                 </div>
             </div>
@@ -45,9 +45,8 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+
     <div class="row mt-2">
 
         <div class="col-lg-4">
@@ -67,25 +66,20 @@
                 <i class="fa-solid fa-user-gear" style="font-size:5rem;"></i>
                 <div class="card-body">
                     <h5 class="card-title">Administracion de Usuarios</h5>
-                    <p class="card-text">Crea, edita o elimina nuevos Usuarios del Sistema</p>
-
+                    <p class="card-text">Crea, edita o elimina nuevos Usuarios</p>
                     @if (esAdmin)
                     {
-                        <a asp-controller="Usuarios" asp-action="GestionUsuarios"
+                       <a asp-controller="Usuarios" asp-action="GestionUsuarios"
                        class="btn btn-outline-warning col-12">Ir a la Administracion</a>
                     }
                     else
                     {
-
-                        <a asp-controller="Usuarios" asp-action="GestionUsuarios"
+                       <a asp-controller="Usuarios" asp-action="GestionUsuarios"
                        class="btn btn-outline-warning col-12 disabled">Sin Acceso a Esta Funcion</a>
                     }
-
                 </div>
             </div>
         </div>
-
-
 
         <div class="col-lg-4">
             <div class="card p-3">
@@ -98,8 +92,6 @@
                 </div>
             </div>
         </div>
-
-
 
     </div>
 </div>

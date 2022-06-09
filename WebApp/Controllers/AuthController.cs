@@ -103,6 +103,11 @@ namespace WebApp.Controllers
             return RedirectToAction(nameof(Profile));
         }
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
