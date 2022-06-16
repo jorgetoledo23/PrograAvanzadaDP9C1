@@ -1,0 +1,50 @@
+﻿@model ICollection<Producto>
+
+<div class="card text-center">
+    <div class="card-header">
+        Administracion de Productos
+    </div>
+    <div class="card-body">
+        <a asp-action="Create"
+           class="btn btn-outline-primary"><i class="fa-solid fa-user-plus me-2"></i>Agregar Nuevo Producto</a>
+    </div>
+</div>
+
+<div class=" row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var P in Model)
+            {
+                <tr>
+                    <td>
+                        <img class="img-fluid" src="~/img/@P.ImagenUrl" width="50" height="50"/>
+                    </td>
+                    <td>@P.Name</td>
+                    <td>@P.Descripcion</td>
+                    <td>@P.Precio</td>
+                    <td>@P.Stock</td>
+                    <td>@P.Categoria.Name</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-CategoriaId="@P.Id"><i class="fa-solid fa-pen-to-square me-2"></i></a>
+                        <a asp-action="Disable" asp-route-CategoriaId="@P.Id" asp-route-Enable="false"><i class="fa-solid fa-toggle-off me-2"></i></a>
+                        <a asp-action="Delete" asp-route-CategoriaId="@P.Id" onclick="return confirm('Estas Seguro?')"
+                        ><i class="fa-solid fa-trash me-2"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

@@ -1,12 +1,12 @@
-﻿@model ICollection<Categoria>
+﻿@model CreateCategoriaViewModel
 
 <div class="card text-center">
     <div class="card-header">
         Administracion de Categorias
     </div>
     <div class="card-body">
-        <a asp-action="Create"
-        class="btn btn-outline-primary"><i class="fa-solid fa-user-plus me-2"></i>Agregar Nueva Categoria</a>
+        <a data-bs-toggle="modal" data-bs-target="#createCatModal"
+           class="btn btn-outline-primary"><i class="fa-solid fa-user-plus me-2"></i>Agregar Nueva Categoria</a>
     </div>
 </div>
 
@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var C in Model)
+            @foreach (var C in Model.Categorias)
             {
                 <tr>
                     <td>@C.Name</td>
@@ -31,14 +31,53 @@
                         <a asp-action="Edit" asp-route-CategoriaId="@C.Id"><i class="fa-solid fa-pen-to-square me-2"></i></a>
                         @if (C.Enabled == true)
                         {
-                            <a asp-action="Disable" asp-route-CategoriaId="@C.Id" asp-route-Enable="false"><i class="fa-solid fa-toggle-off"></i></a>
-                        }else{
-                            <a asp-action="Disable" asp-route-CategoriaId="@C.Id" asp-route-Enable="true"><i class="fa-solid fa-toggle-on"></i></a>
+                            <a asp-action="Disable" asp-route-CategoriaId="@C.Id" asp-route-Enable="false"><i class="fa-solid fa-toggle-off me-2"></i></a>
                         }
-                        
+                        else
+                        {
+                            <a asp-action="Disable" asp-route-CategoriaId="@C.Id" asp-route-Enable="true"><i class="fa-solid fa-toggle-on me-2"></i></a>
+                        }
+                        <a asp-action="Delete" asp-route-CategoriaId="@C.Id" onclick="return confirm('Estas Seguro?')"
+                        ><i class="fa-solid fa-trash me-2"></i></a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="createCatModal" tabindex="-1" aria-labelledby="createCatModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content m-2 p-2">
+            <div class="col-md-12">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar nueva Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form class="row justify-content-center" asp-action="Create" method="post">
+                    <div>
+                        <div class="form-group m-2">
+                            <input asp-for="Categoria.Name" class="form-control" placeholder="Nombre" />
+                            <span asp-validation-for="Categoria.Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group m-2">
+                            <input asp-for="Categoria.Descripcion" class="form-control" placeholder="Descripcion" />
+                            <span asp-validation-for="Categoria.Descripcion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group m-2">
+                            <input type="submit" value="Crear Categoria" class="btn btn-primary col-12" />
+                        </div>
+                    </div>
+
+                </form>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

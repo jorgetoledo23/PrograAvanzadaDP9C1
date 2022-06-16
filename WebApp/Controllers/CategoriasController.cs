@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
+using WebApp.ViewModel;
 
 namespace WebApp.Controllers
 {
@@ -12,7 +13,11 @@ namespace WebApp.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Categorias.ToList());
+            CreateCategoriaViewModel Ccvm = new CreateCategoriaViewModel()
+            {
+                Categorias = _context.Categorias.ToList()
+            };
+            return View(Ccvm);
             //return View(_context.Categorias.Where(c=> c.Enabled == true).ToList());
         }
 
@@ -22,7 +27,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Categoria C)
+        public async Task<IActionResult> Create([Bind(Prefix = "Categoria")] Categoria C)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +73,14 @@ namespace WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Delete(int CategoriaId)
+        {
+            var C = await _context.Categorias.FindAsync(CategoriaId);
+            if (C == null) return NotFound();
+            _context.Categorias.Remove(C);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
 
 
